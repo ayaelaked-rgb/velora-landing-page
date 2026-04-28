@@ -49,3 +49,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+gsap.utils.toArray(".review-card").forEach(card=>{
+
+gsap.from(card,{
+scrollTrigger:{
+trigger:card,
+start:"top 85%"
+},
+y:60,
+opacity:0,
+duration:.8
+})
+
+});
+
+gsap.utils.toArray("section").forEach(section => {
+
+    gsap.from(section, {
+        scrollTrigger: {
+            trigger: section,
+            start: "top 85%",
+            toggleActions: "play none none none"
+        },
+        y: 60,
+        opacity: 0,
+        duration: 1,
+        ease: "power2.out"
+    });
+
+});
